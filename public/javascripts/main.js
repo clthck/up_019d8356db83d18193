@@ -1,11 +1,11 @@
 +function (window, jQuery, document) {
 
-	$( () => {
+	$(function () {
     $('a[href="' + location.pathname + '"]', '#navbar').parents('li').addClass('active');
 
 		$('.rest').restfulizer();
     $('.select2').select2();
-    $('select.select2.with-all-option').on('select2:select', (e) => {
+    $('select.select2.with-all-option').on('select2:select', function(e) {
       var $this = $(e.target),
           value = $this.val();
       if (e.params.data.id === '-1') {

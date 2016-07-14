@@ -1,9 +1,0 @@
-{
-  "development": {
-    "username": "clthck",
-    "password": null,
-    "database": "up_019d8356db83d18193",
-    "host": "localhost",
-    "dialect": "postgres"
-  }
-}

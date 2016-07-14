@@ -78,7 +78,7 @@ router.post('/:id', (req, res, next) => {
           LOCATION: body.LOCATION,
         },
             fileName = locationFile.url.match(/\/([^\/]+)$/)[1];
-        jsonfile.writeFileSync(__dirname + '/../json_results/' + fileName.replace(/\.json$/, '_result.json'), json);
+        jsonfile.writeFileSync(__dirname + '/../public/json_results/' + fileName.replace(/\.json$/, '_result.json'), json);
         res.status(200).send('success');
       }
     });

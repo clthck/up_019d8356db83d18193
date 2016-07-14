@@ -39,7 +39,10 @@ html(lang='en')
                 ul.dropdown-menu
                   li: a(href='/admin/location-files') Show All
                   li: a(href='/admin/location-files/new') Add New
-            li: a.rest(href='/logout' data-method="POST") Sign Out
+            li
+              a(href='#' onclick="$(this).find('form').submit();")
+                | Sign Out
+                form.hide(method='post' action='/logout')
 
     block content
 

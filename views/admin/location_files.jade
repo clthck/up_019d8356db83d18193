@@ -1,0 +1,19 @@
+extends ../layout/default
+
+block content
+  .container
+    h1 Manage location files
+    table.table
+      thead
+        tr
+          th #
+          th URL
+          th Action
+      tbody
+        each locationFile, index in locationFiles
+          tr
+            td= index + 1
+            td= locationFile.url
+            td
+              a(href='/admin/location-files/#{locationFile.id}/edit').btn.btn-default(type='button') Edit
+              a.rest(href='/admin/location-files/#{locationFile.id}/destroy' data-method="POST").btn.btn-danger(type='button') Delete

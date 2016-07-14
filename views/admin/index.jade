@@ -1,0 +1,27 @@
+extends ../layout/default
+
+block content
+  .container
+    h1 Manage user permissions
+    form(method='post')
+      button.btn.btn-primary.pull-right(type='submit') Update
+      table.table
+        thead
+          tr
+            th #
+            th Username
+            th Full Name
+            th Email
+            th Location Files
+        tbody
+          each user, index in users
+            tr
+              td= index + 1
+              td= user.username
+              td= user.fullName
+              td= user.email
+              td
+                select.select2.with-all-option(name="user[locationFileIds][#{user.username}]" data-value=user.customData.locationFileIds multiple)
+                  option(value='-1') All
+                  each locationFile in locationFiles
+                    option(value=locationFile.id)= locationFile.url

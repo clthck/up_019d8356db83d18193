@@ -1,0 +1,10 @@
+extends ../layout/default
+
+block content
+  .container
+    h1 Add location file
+    form(method='post' action='/admin/location-files/create')
+      .form-group
+        label(for='location_file_url') URL for new location JSON file
+        input.form-control#location_file_url(type='url' placeholder='Enter url here...' name='location_file_url')
+      button.btn.btn-primary(type='submit') Add

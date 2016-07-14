@@ -1,0 +1,62 @@
+extends layout/default
+
+block content
+  .container.theme-showcase(role='main')
+    //- Main jumbotron for a primary marketing message or call to action
+    .jumbotron
+      h1 Theme example
+      p This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.
+
+    .page-header
+      h1 Wells
+    .well
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+
+    .page-header
+      h1 Bootstrap grid examples
+      p.lead Basic grid layouts to get you familiar with building within the Bootstrap grid system.
+
+    h3 Three equal columns
+    p
+      | Get three equal-width columns 
+      strong starting at desktops and scaling to large desktops
+      | . On mobile devices, tablets and below, the columns will automatically stack.
+    .row
+      each val, key in data
+        if typeof val === 'object' && key.match(/^IMAGE/)
+          .col-md-4
+            | .col-md-4
+            img.img-responsive(src=val.URL)
+            br
+            p
+              a.btn.btn-lg.btn-default(href=val.URL target='_blank') Visit URL
+              button.btn.btn-lg.btn-primary.gen-json(type='button' data-image-key=key) Use This!
+
+block script
+  //- Placed at the end of the document so the pages load faster
+  //- script(src='/javascripts/vendor/docs.min.js')
+  //- IE10 viewport hack for Surface/desktop Windows 8 bug
+  script(src='/javascripts/ie10-viewport-bug-workaround.js')
+
+  script.
+    +function (window, jQuery, document) {
+      $( () => {
+        
+        $('.gen-json').on('click', function () {
+          $.ajax({
+            method: 'post',
+            data: {
+              imageKey: $(this).data('image-key'),
+            },
+            url: location.pathname,
+            success: () => {
+              alert('Success');
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+        });
+
+      });
+    } (window, window.jQuery, document);

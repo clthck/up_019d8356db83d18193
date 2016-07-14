@@ -1,0 +1,9 @@
+extends layout/default
+
+block content
+  .container.theme-showcase(role='main')
+    .page-header
+      h1 Your Pages
+    .well
+      each locationFile in locationFiles
+        p: a(href='/page/#{locationFile.id}')= locationFile.url

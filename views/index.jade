@@ -1,3 +1,5 @@
+- var locationTitle = ''
+
 extends layout/default
 
 block content
@@ -6,4 +8,5 @@ block content
       h1 Your Pages
     .well
       each locationFile in locationFiles
-        p: a(href='/page/#{locationFile.id}')= locationFile.url
+        - locationTitle = locationFile.url.match(/\/([^\/]+)$/)[1].replace(/\.json$/, '').replace(/-URLs$/i, '')
+        p: a(href='/page/#{locationFile.id}')= locationTitle

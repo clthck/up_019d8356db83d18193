@@ -43,14 +43,18 @@ function authorizePage(req, res, next) {
 router.get('/:id', authorizePage, function(req, res, next) {
   injectGroupName(req, res, () => {
     models.LocationFile.findById(req.params.id).then(locationFile => {
+      var pageTitle = locationFile.url.match(/\/([^\/]+)$/)[1].replace(/\.json$/, '');
+
       request({
         url: locationFile.url,
         json: true,
       }, (err, response, body) => {
         if (!err && response.statusCode === 200) {
+          pageTitle = body.SITECAMEL || pageTitle;
           res.render('page', { 
             title: 'Theme Template for Bootstrap',
             data: body,
+            pageTitle: pageTitle,
           });
         }
       });

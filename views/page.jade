@@ -5,12 +5,12 @@ block content
     //- Main jumbotron for a primary marketing message or call to action
     .jumbotron
       h1 Theme example
-      p This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.
+      p This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it. Testing 1-2-3. Choose the best image by hitting the 'Use This!' button.
 
     .page-header
       h1 Wells
     .well
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Testing 1-2-3. Choose the best image by selecting the "Use This!" button.
 
     .page-header
       h1 Bootstrap grid examples
@@ -25,7 +25,7 @@ block content
       each val, key in data
         if typeof val === 'object' && key.match(/^IMAGE/)
           .col-md-4
-            | .col-md-4
+            |.col-md-4
             img.img-responsive(src=val.URL)
             br
             p
@@ -40,7 +40,7 @@ block script
 
   script.
     +function (window, jQuery, document) {
-      $( () => {
+      $(function() {
         
         $('.gen-json').on('click', function () {
           $.ajax({
@@ -49,10 +49,10 @@ block script
               imageKey: $(this).data('image-key'),
             },
             url: location.pathname,
-            success: () => {
+            success: function() {
               alert('Success');
             },
-            error: (err) => {
+            error: function(err) {
               console.log(err);
             }
           })

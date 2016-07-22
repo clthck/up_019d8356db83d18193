@@ -5,7 +5,7 @@ extends layout/default
 block content
   .container.theme-showcase(role='main')
     .page-header
-      h1 Your Pages
+      h1 Sites
     .well
       each locationFile in locationFiles
         - locationTitle = locationFile.url.match(/\/([^\/]+)$/)[1].replace(/\.json$/, '').replace(/-URLs$/i, '')

@@ -34,7 +34,7 @@ router.get('/', function(req, res, next) {
       }
       models.LocationFile.findAll(criteria).then(locationFiles => {
         res.render('index', { 
-          title: 'Theme Template for Bootstrap',
+          title: 'Angler Spy Image Curator',
           locationFiles: locationFiles,
         });
       });

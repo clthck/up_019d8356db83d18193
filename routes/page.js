@@ -52,7 +52,7 @@ router.get('/:id', authorizePage, function(req, res, next) {
         if (!err && response.statusCode === 200) {
           pageTitle = body.SITECAMEL || pageTitle;
           res.render('page', { 
-            title: 'Theme Template for Bootstrap',
+            title: 'Angler Spy - Image Curator',
             data: body,
             pageTitle: pageTitle,
           });

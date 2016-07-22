@@ -4,23 +4,23 @@ block content
   .container.theme-showcase(role='main')
     //- Main jumbotron for a primary marketing message or call to action
     .jumbotron
-      h1 Theme example
-      p This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it. Testing 1-2-3. Choose the best image by hitting the 'Use This!' button.
+      h1 Angler Spy Image Chooser
+      p Choose the best image by hitting the 'Use This!' button.
 
     .page-header
       h1= pageTitle
     .well
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Testing 1-2-3. Choose the best image by selecting the "Use This!" button.
+      p Choose the best image by hitting the "Use This!" button.  Look for a pop-up message that affirms your image was chosen.  If you do not get a pop-up message then IT DID NOT WORK! Please try again if you don't get a pop-up message.  If trying again does not work, try logging out and then log back in, and try again.  If it still does not work then please let us know at hello@anglerspy.com so we can take a look.  If you would like to change your picture choice, just hit a different 'Use This!' button and a new picture will be selected.  Your chosen picture should make it into the system within about 20 minutes.  If your chosen picture does not wind up on the site, or on your dashboard, please send us a message at hello@anglerspy.com so we can figure out what happened.  This is an important piece of what we're trying to do so THANK YOU!
 
     .page-header
-      h1 Bootstrap grid examples
-      p.lead Basic grid layouts to get you familiar with building within the Bootstrap grid system.
+      h1 Here are your choices
+      p.lead We blasted about 10 pictures using various camera settings..
 
-    h3 Three equal columns
+    h3 Disks are primary
     p
-      | Get three equal-width columns 
-      strong starting at desktops and scaling to large desktops
-      | . On mobile devices, tablets and below, the columns will automatically stack.
+      | Please remember 
+      strong the primary objective of these images is to see this disks
+      |  but not necessarily judge the 'color' of the water. Thanks for playing!
     .row
       each val, key in data
         if typeof val === 'object' && key.match(/^IMAGE/)
@@ -49,7 +49,7 @@ block script
             },
             url: location.pathname,
             success: function() {
-              alert('Success');
+              alert('Got your image choice!');
             },
             error: function(err) {
               console.log(err);

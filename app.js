@@ -47,6 +47,7 @@ var injectGroupName = (req, res, next) => {
 
 app.use(stormpath.getUser, injectGroupName);
 
+app.use('/json_results', express.static(path.join(__dirname, 'public/json_results')));
 app.use('/', stormpath.loginRequired, routes);
 app.use('/page', stormpath.loginRequired, page);
 app.use('/admin', stormpath.groupsRequired(['administrators']), admin.index);
